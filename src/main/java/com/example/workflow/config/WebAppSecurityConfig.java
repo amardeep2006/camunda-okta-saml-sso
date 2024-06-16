@@ -8,7 +8,6 @@ import org.opensaml.saml.saml2.core.Assertion;
 import org.opensaml.saml.saml2.core.Attribute;
 import org.opensaml.saml.saml2.core.AttributeStatement;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -36,12 +35,6 @@ import static org.springframework.security.web.util.matcher.AntPathRequestMatche
 @Configuration
 public class WebAppSecurityConfig {
 
-//    @Value("${sso.enable.singlelogout}")
-//    private boolean singleLogout;
-//    private final CustomLogoutSuccessHandler customLogoutSuccessHandler;
-//    public WebAppSecurityConfig(CustomLogoutSuccessHandler customLogoutSuccessHandler) {
-//        this.customLogoutSuccessHandler = customLogoutSuccessHandler;
-//    }
     @Autowired
     RelyingPartyRegistrationRepository relyingPartyRegistrationRepository;
     @Inject
