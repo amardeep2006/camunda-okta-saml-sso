@@ -35,13 +35,6 @@ This will generate certificate.crt and private.key in credentials folder.
 
 Register for an okta developer account on https://developer.okta.com
 
-Navigation is :  Directory : People/Groups 
-
-Login to your okta Tenant and create a group called "camunda-admin"
-
-Create few users as well and assign them to "camunda-admin"
-
-
 Register an app on Okta as per details below
 
 Navigation is : Applications : Create App Integration
@@ -54,15 +47,13 @@ Navigation is : Applications : Create App Integration
 *    Application username           = Email Prefix
 *    Assertion Encryption           = Encrypted
 *    Encryption Certificate         = upload certificate.crt
-*    Enable Single Logout           = Enable this
-*    Single Logout URL              = http://localhost:8080/logout/saml2/slo
-*    SP Issuer                      = http://localhost:8080/saml2/service-provider-metadata/camunda
 *    Signature Certificate          = upload certificate.crt
 
    Attribute Statements :
 
         first, Value = user.firstName
         last , Value = user.lastName
+        email , Value = user.email
 
    Group Attribute Statements :
 
@@ -77,18 +68,14 @@ To extract IDP Metadata, do the following
 - Right click and select "View page source"
 - Copy the complete XML and paste into file "main/resources/okta-metadata.yml"
 
+Navigation is :  Directory : People/Groups
+
+Login to your okta Tenant and create a group called "camunda-admin"
+
+Create few users as well and assign them to "camunda-admin" also assign this group to registered app.
+
 Run you project using command `mvn spring-boot:run`
 
 http://localhost:8080 will take you to Okta now.
 
-To enable Single log out, you should change the value of this flag to true in application.yml file
-
-`sso:
-  enable:
-    singlelogout: true`
-
-and update it to your tenant 
-
-`okta:
-  issuer:
-    url: https://your.dev.tenant.okta.com`
+Raise a github issue in case you see some issue.
