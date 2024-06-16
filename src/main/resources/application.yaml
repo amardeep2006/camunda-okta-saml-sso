@@ -1,18 +1,19 @@
 spring.datasource.url: jdbc:h2:file:./camunda-h2-database
-
-server:
-  port: 8080
 #Enabled for authorization
 camunda.bpm:
   authorization:
     enabled: true
-# This is boot user for first time and you can delete it later
+# This is boot admin user
   admin-user:
-    id: demo
-    password: demo
-  #    enabled-for-custom-code: true
+    id: amar.deep.singh@xyz.com
+    firstName: Amar Deep
+    lastName: Singh
+    email: amar.deep.singh@xyz.com
   filter:
     create: All tasks
+  generic-properties:
+    properties:
+      generalResourceWhitelistPattern: ".+"
 spring:
   security:
     saml2:
@@ -27,15 +28,8 @@ spring:
               credentials:
                 - private-key-location: "classpath:credentials/private.key"
                   certificate-location: "classpath:credentials/certificate.crt"
-            identityprovider:
+            assertingparty:
               metadata-uri: "classpath:okta-metadata.xml"
-okta:
-  issuer:
-    url: https://your.dev.tenant.okta.com
-# The value of this flag activates single logout (clears okta session as well.)
-sso:
-  enable:
-    singlelogout: false
 
 logging:
   level:

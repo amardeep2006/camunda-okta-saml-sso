@@ -10,12 +10,12 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
-        <version.camunda>7.17.0</version.camunda>
-        <version.spring-boot>2.6.11</version.spring-boot>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <version.camunda>7.21.0</version.camunda>
+        <version.spring-boot>3.3.0</version.spring-boot>
         <version.graal.js>21.1.0</version.graal.js>
-        <version.postgresql>42.3.3</version.postgresql>
+        <version.postgresql>42.7.3</version.postgresql>
     </properties>
 
     <dependencyManagement>
@@ -39,6 +39,27 @@
     </dependencyManagement>
 
     <dependencies>
+
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.opensaml/opensaml-core &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.opensaml</groupId>-->
+<!--            <artifactId>opensaml-core</artifactId>-->
+<!--            <version>4.2.0</version>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.opensaml/opensaml-saml-api &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.opensaml</groupId>-->
+<!--            <artifactId>opensaml-saml-api</artifactId>-->
+<!--            <version>4.2.0</version>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.opensaml/opensaml-saml-impl &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.opensaml</groupId>-->
+<!--            <artifactId>opensaml-saml-impl</artifactId>-->
+<!--            <version>4.2.0</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.springframework.security</groupId>
@@ -108,5 +129,14 @@
             </plugin>
         </plugins>
     </build>
+
+    <!--  This was added to include opensaml 4 libraries -->
+    <repositories>
+        <repository>
+            <id>shibboleth_repository</id>
+            <name>Shibboleth Maven Repository</name>
+            <url>https://build.shibboleth.net/nexus/content/repositories/releases/</url>
+        </repository>
+    </repositories>
 
 </project>
