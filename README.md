@@ -66,7 +66,7 @@ To extract IDP Metadata, do the following
 
 - click on link "Identity Provider metadata"
 - Right click and select "View page source"
-- Copy the complete XML and paste into file "main/resources/okta-metadata.yml"
+- Copy the complete XML and paste into file "main/resources/okta-metadata.xml"
 
 Navigation is :  Directory : People/Groups
 
