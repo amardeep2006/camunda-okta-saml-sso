@@ -86,7 +86,7 @@ public class WebAppSecurityConfig {
         String webAppPath = camundaBpmProperties.getWebapp()
                 .getApplicationPath(); //default value for root-context is /camunda
 
-        http.csrf(csrf -> csrf.ignoringRequestMatchers(antMatcher(webAppPath + "/api/**")))
+        http.csrf(csrf -> csrf.disable())
                 .saml2Login(withDefaults())
 //                .saml2Logout(withDefaults())
                 .authenticationProvider(samlAuthProv) // change : register the new SAML Auth provider
